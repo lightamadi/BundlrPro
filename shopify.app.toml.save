@@ -1,0 +1,9 @@
+[shopify]
+api_key = "d3dd8cfe209110fbb22eef070cd54e2d"
+app_url = "https://c287-86-12-34-127.ngrok-free.app"
+host = "c287-86-12-34-127.ngrok-free.app"
+scopes = "read_products,write_products,read_orders,write_orders"
+
+[development]
+store = "phoenix-bundler-bundlrpro.myshopify.com"
+

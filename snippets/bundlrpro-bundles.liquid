@@ -1,0 +1,23 @@
+{% comment %}
+  BundlrPro Bundles Snippet
+  This snippet loads the BundlrPro bundles interface on product pages
+{% endcomment %}
+
+<div id="bundlrpro-bundles" data-product-id="{{ product.id }}">
+  <script>
+    // Load the BundlrPro bundles interface
+    (function() {
+      const productId = document.getElementById('bundlrpro-bundles').dataset.productId;
+      const proxyUrl = 'https://{{ shop.permanent_domain }}/apps/bundlrpro/bundles?product_id=' + productId;
+      
+      fetch(proxyUrl)
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('bundlrpro-bundles').innerHTML = html;
+        })
+        .catch(error => {
+          console.error('Error loading BundlrPro bundles:', error);
+        });
+    })();
+  </script>
+</div> 

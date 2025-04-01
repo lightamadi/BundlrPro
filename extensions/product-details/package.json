@@ -1,0 +1,20 @@
+{
+  "name": "bundlrpro-product-details",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "shopify app function build",
+    "deploy": "shopify app deploy",
+    "dev": "shopify app dev",
+    "preview": "shopify app preview"
+  },
+  "dependencies": {
+    "@shopify/ui-extensions": "^2024.1.0",
+    "@shopify/ui-extensions-react": "^2024.10.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "typescript": "^5.0.0"
+  }
+}

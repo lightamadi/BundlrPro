@@ -1,0 +1,31 @@
+type = "product_details"
+name = "BundlrPro Bundles"
+handle = "bundlrpro-bundles"
+api_version = "2024-01"
+target = "product"
+
+[capabilities]
+block_progress = true
+network_access = true
+api_access = true
+network_access_hosts = ["*.shopify.com", "*.myshopify.com", "admin.shopify.com", "accounts.shopify.com"]
+
+[settings]
+  [[settings.fields]]
+  key = "heading"
+  type = "single_line_text_field"
+  name = "Heading"
+  description = "The heading for the bundles section"
+  default = "Available Bundles"
+
+  [[settings.fields]]
+  key = "description"
+  type = "multi_line_text_field"
+  name = "Description"
+  description = "A description for the bundles section"
+  default = "Choose from our available bundles to save on your purchase"
+
+[extension_points]
+  [[extension_points.target]]
+  target = "product"
+  module = "./src/index.tsx" 

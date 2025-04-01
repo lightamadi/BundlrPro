@@ -1,0 +1,26 @@
+name = "bundle-customizer"
+type = "checkout_ui_extension"
+api_version = "2024-01"
+
+[capabilities]
+network_access = true
+block_progress = true
+api_access = true
+
+[extension_points]
+  - "Checkout::Dynamic::Render"
+
+[settings]
+  [[settings.fields]]
+  key = "bundle_display_location"
+  type = "single_line_text_field"
+  name = "Bundle Display Location"
+  description = "Where to display the bundle customizer on the product page"
+  default = "product-form"
+
+[build]
+command = "npm run build"
+path = "dist"
+
+[preview]
+url = "https://{{shop}}.myshopify.com/products/{{product}}" 

@@ -1,0 +1,62 @@
+name = "BundlrPro"
+client_id = "YOUR_CLIENT_ID"
+application_url = "https://6aacc3f6c06d.ngrok.app"
+embedded = true
+
+[access_scopes]
+# Use access scopes to match the scopes in your app's setup
+scopes = "write_products,read_products,write_orders,read_orders,write_inventory,read_inventory,write_discounts,read_discounts"
+
+[auth]
+redirect_urls = [
+    "https://6aacc3f6c06d.ngrok.app/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-01"
+
+[pos]
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "blundrpro-development-store.myshopify.com"
+
+[app_preferences]
+url = "https://6aacc3f6c06d.ngrok.app/preferences"
+
+[web]
+backend_url = "https://6aacc3f6c06d.ngrok.app"
+frontend_url = "https://6aacc3f6c06d.ngrok.app"
+
+[app_proxy]
+subpath = "apps"
+prefix = "bundlr-pro"
+url = "https://6aacc3f6c06d.ngrok.app"
+
+[embedded_app]
+url = "https://6aacc3f6c06d.ngrok.app"
+
+[extensions]
+  [[extensions]]
+  name = "bundle-customizer"
+  type = "checkout_ui_extension"
+  handle = "bundle-customizer"
+  api_version = "2024-01"
+  extension_points = [
+    "Checkout::Dynamic::Render"
+  ]
+  capabilities = {
+    network_access = true,
+    block_progress = true,
+    api_access = true
+  }
+  settings = [
+    {
+      key = "bundle_display_location",
+      type = "single_line_text_field",
+      name = "Bundle Display Location",
+      description = "Where to display the bundle customizer on the product page",
+      default = "product-form"
+    }
+  ] 
