@@ -1,102 +1,76 @@
-# BundlrPro - Shopify Product Bundle App
+# BundlrPro - Shopify Bundle Management App
 
-BundlrPro is a powerful Shopify app that allows merchants to create and manage product bundles with dynamic pricing rules. Built with Next.js, Shopify Polaris, and MongoDB.
+A Next.js application for managing product bundles in Shopify stores.
 
 ## Features
 
 - Create and manage product bundles
-- Multiple discount types:
-  - Percentage-based discounts
-  - Fixed-price bundles
-  - Buy X, Get Y Free
-  - Tiered discounts
-- Dynamic pricing rules
-- Real-time bundle price calculations
-- Customizable bundle display options
-- Bundle analytics and performance tracking
-
-## Tech Stack
-
-- Frontend: React.js with Next.js
-- UI Framework: Shopify Polaris
-- Backend: Node.js with Express
-- Database: MongoDB
-- Authentication: Shopify OAuth
-- API Integration: Shopify Admin API
+- Set up bundle discounts and rules
+- Customize bundle display on product pages
+- Manage bundle inventory
+- Track bundle sales and analytics
 
 ## Prerequisites
 
-- Node.js >= 18.0.0
+- Node.js 18.x or later
 - MongoDB
-- Shopify Partner Account
-- ngrok or similar tunnel for local development
+- Shopify Partner account
+- Shopify store with admin access
 
-## Getting Started
+## Environment Variables
+
+1. Copy the `.env.example` file to `.env.local`:
+   ```bash
+   cp .env.example .env.local
+   ```
+
+2. Update the following environment variables in `.env.local`:
+   - `MONGODB_URI`: Your MongoDB connection string
+   - `SHOPIFY_API_KEY`: Your Shopify app API key
+   - `SHOPIFY_API_SECRET`: Your Shopify app API secret
+   - `SHOPIFY_APP_HOST_NAME`: Your app's host name
+   - `NEXT_PUBLIC_SHOPIFY_API_KEY`: Your Shopify app API key (public)
+   - `NEXT_PUBLIC_SHOPIFY_APP_URL`: Your app's public URL
+
+## Installation
 
 1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/bundlr-pro.git
-cd bundlr-pro
-```
+   ```bash
+   git clone https://github.com/lightamadi/BundlrPro.git
+   cd BundlrPro
+   ```
 
 2. Install dependencies:
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
 
-3. Create a `.env.local` file with your configuration:
-```
-MONGODB_URI=mongodb://localhost:27017/bundlr-pro
-SHOPIFY_API_KEY=your_api_key_here
-SHOPIFY_API_SECRET=your_api_secret_here
-SHOPIFY_APP_URL=https://your-app-url.com
-SHOPIFY_APP_SCOPES=read_products,write_products,read_orders,write_orders
-HOST=your-app-url.com
-NEXT_PUBLIC_SHOPIFY_API_KEY=your_api_key_here
-```
+3. Set up environment variables as described above
 
-4. Start the development server:
-```bash
-npm run dev
-```
-
-5. Start ngrok to create a tunnel:
-```bash
-ngrok http 3000
-```
-
-6. Update your Shopify App URL in the Shopify Partner dashboard with your ngrok URL.
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
 ## Development
 
-### Project Structure
+- `npm run dev`: Start the development server
+- `npm run build`: Build the production application
+- `npm start`: Start the production server
+- `npm run lint`: Run ESLint
+- `npm run type-check`: Run TypeScript type checking
+
+## Project Structure
 
 ```
-bundlr-pro/
-├── src/
-│   ├── components/     # React components
-│   │   ├── api/      # API routes
-│   │   └── index.tsx # Main dashboard
-│   ├── models/       # MongoDB models
-│   └── lib/          # Utility functions
-├── public/           # Static assets
-└── package.json
+src/
+├── components/     # React components
+├── config/        # Configuration files
+├── lib/           # Utility functions and shared code
+├── models/        # MongoDB models
+├── pages/         # Next.js pages and API routes
+└── styles/        # Global styles
 ```
-
-### API Endpoints
-
-- `GET /api/bundles` - List all bundles
-- `POST /api/bundles` - Create a new bundle
-- `GET /api/bundles/:id` - Get bundle details
-- `PUT /api/bundles/:id` - Update a bundle
-- `DELETE /api/bundles/:id` - Delete a bundle
-
-## Deployment
-
-1. Set up a MongoDB database (e.g., MongoDB Atlas)
-2. Deploy to your preferred hosting platform (e.g., Vercel, Heroku)
-3. Update environment variables on your hosting platform
-4. Update the Shopify App URL in your Shopify Partner dashboard
 
 ## Contributing
 
@@ -108,8 +82,4 @@ bundlr-pro/
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Support
-
-For support, email support@bundlrpro.com or open an issue in the GitHub repository. 
+This project is licensed under the MIT License - see the LICENSE file for details. 
